@@ -37,8 +37,6 @@ export default function Signup() {
         ? 'An account with this email already exists'
         : err.code === 'auth/weak-password'
           ? 'Password must be at least 6 characters'
-          : err.response?.data?.error
-            ? `Account created, but profile setup failed: ${err.response.data.error}`
           : 'Signup failed. Please try again.'
       setError(message)
     } finally {
