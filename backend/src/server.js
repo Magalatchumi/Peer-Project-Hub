@@ -30,6 +30,10 @@ app.use(cors({
 }))
 app.use(express.json({ limit: '10mb' }))
 
+app.get('/', (_req, res) => {
+  res.json({ status: 'ok', message: 'Peer Project Hub API is running' })
+})
+
 // Health check
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
